@@ -6,6 +6,7 @@ import Parent from './Parent';
 jest.mock('./Child', () => (props: ChildProps) => MockComponent<ChildProps>(props));
 
 describe('Parent', () => {
+
   it('render parent title text', () => {
     // when
     render(<Parent />);
@@ -26,4 +27,5 @@ describe('Parent', () => {
     expect(mockComponentPropsSpy).toHaveBeenCalled();
     expect(mockComponentPropsSpy).toHaveBeenCalledWith(expectChildProps);
   });
+
 });

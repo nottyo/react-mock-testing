@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const mockComponentPropsSpy = jest.fn();
 
 export default function MockComponent<T>(props: T) {
