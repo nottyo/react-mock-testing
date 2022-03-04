@@ -20,12 +20,17 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "eslintConfig": {
+    "plugins": [
+      "test-selectors"
+    ],
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:test-selectors/recommendedWithErrors"
     ],
     "rules": {
       "semi": [
@@ -45,7 +50,10 @@
           "ignoreComments": true,
           "ignoreTemplateLiterals": true
         }
-      ]
+      ],
+      "test-selectors/button": ["error", "always", {
+        "testAttribute": "data-atid"
+      }]
     }
   },
   "browserslist": {
@@ -61,6 +69,8 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-test-selectors": "^2.0.3",
+    "eslint-plugin-testing-library": "^5.0.6",
     "msw": "^0.38.1"
   }
 }
